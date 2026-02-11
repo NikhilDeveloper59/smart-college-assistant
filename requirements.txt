@@ -6,3 +6,4 @@ pickle-mixin
 langdetect
 sentence-transformers
 gunicorn
+torch
