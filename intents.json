@@ -1,0 +1,387 @@
+{
+  "intents": [
+
+  {
+    "tag": "greeting",
+    "patterns": [
+      "hi", "hello", "hey", "good morning", "good evening",
+      "good afternoon", "hii", "helo", "yo", "what's up"
+    ],
+    "responses": [
+      "👋 Welcome to Smart College Assistant! I'm here to guide you through admissions, placements, projects and much more 🚀",
+      
+      "Hi there 😊 Ready to explore college information? I can help you with admissions, branches, placements and career guidance!",
+      
+      "Hello 👋 Great to see you! Tell me what you're looking for — admission, scholarship, placement or projects?",
+      
+      "Hey 👋 I'm your Smart College Assistant 🤖 Let's make your college journey easier and smarter!",
+      
+      "Welcome 🎓 I'm here to assist you with everything from fees to final year projects. What would you like to know today?"
+    ],
+    "set_context": "main_menu",
+    "follow_up": [
+      "admission_process",
+      "branches_available",
+      "placement_details",
+      "project_ideas"
+    ]
+  },
+
+    {
+      "tag": "show_features",
+      "patterns": ["features", "what can you do", "services", "menu"],
+      "responses": [
+        "Here are the main features available. Please choose one:"
+      ],
+      "set_context": "main_menu",
+      "follow_up": [
+        "admission_process",
+        "fees_information",
+        "placement_details",
+        "project_ideas"
+      ]
+    },
+
+    {
+      "tag": "admission_process",
+      "show_in_menu": true,
+      "menu_label": "🎓 Admissions",
+      "patterns": [
+        "admission process", "how to apply", "Admission",
+        "how can i get admission", "admission procedure",
+        "college admission details"
+      ],
+      "responses": [
+        "🎓 Admission Process:\n• Fill online application form\n• Submit required documents\n• Entrance/merit-based selection\n• Pay admission fee\n\nWould you like document details?"
+      ],
+      "follow_up": ["admission_documents", "fees_information", "scholarship_info"]
+    },
+
+    {
+      "tag": "admission_documents",
+      "show_in_menu": true,
+      "menu_label": "📄 Documents",
+      "patterns": [
+        "documents required", "required documents", "Document", "Documents",
+        "certificate required", "admission documents",
+        "what documents needed"
+      ],
+      "responses": [
+        "📄 Required Documents:\n• 10th & 12th Marksheet\n• Transfer Certificate\n• ID Proof\n• Passport Size Photos\n• Caste/Income Certificate (if applicable)"
+      ],
+      "follow_up": ["fees_information", "scholarship_info"]
+    },
+
+    {
+      "tag": "fees_information",
+      "show_in_menu": true,
+      "menu_label": "💰 Fees",
+      "patterns": [
+        "fee structure", "college fees", "fee", "Fees",
+        "tuition fee", "semester fee",
+        "how much fees"
+      ],
+      "responses": [
+        "💰 Fee Structure includes:\n• Tuition Fee\n• Lab & Library Fee\n• Exam Fee\n\nFor exact details please check official fee portal."
+      ],
+      "follow_up": ["scholarship_info", "admission_process"]
+    },
+
+    {
+    "tag": "scholarship_info",
+    "show_in_menu": true,
+    "menu_label": "🎓 Scholarship",
+    "patterns": [
+      "scholarship",
+      "pms",
+      "post matric scholarship",
+      "bihar scholarship",
+      "financial aid",
+      "fee concession",
+      "education loan",
+      "government scheme",
+      "pms scholarship",
+      "national scholarship"
+    ],
+    "responses": [
+      "🎓 Scholarship Support Available:\n\n• PMS (Post Matric Scholarship)\n• Bihar Government Scholarship\n• NSP (National Scholarship Portal)\n• Merit-based Scholarships\n• Category-based Financial Support\n\nYou can apply through official government portals.\n\nWould you like fee details or admission help?"
+    ],
+    "follow_up": [
+      "fees_information",
+      "admission_process",
+      "scholarship_documents"
+    ]
+  },
+
+    {
+      "tag": "branches_available",
+      "show_in_menu": true,
+      "menu_label": "🏫 Branches",
+      "patterns": [
+        "branches", "courses available", "what branch",
+        "what branches", "departments",
+        "available programs"
+      ],
+      "responses": [
+        "📚 Available Branches:\n• CSE\n• AI & Data Science\n• ECE\n• Mechanical\n• Civil\n\nWhich branch details do you want?"
+      ],
+      "follow_up": ["cse_details", "ai_branch_details", "placement_details"]
+    },
+
+    {
+      "tag": "cse_details",
+      "patterns": [
+        "cse branch", "computer science details", "cse",
+        "about cse", "cse syllabus"
+      ],
+      "responses": [
+        "💻 CSE Focus Areas:\n• Programming\n• Data Structures\n• AI/ML\n• Web Development\n• Cloud Computing"
+      ],
+      "follow_up": ["project_ideas", "internship_guidance", "placement_details"]
+    },
+
+    {
+      "tag": "ai_branch_details",
+      "patterns": [
+        "ai branch", "artificial intelligence branch", "ai",
+        "ai syllabus", "data science course"
+      ],
+      "responses": [
+        "🤖 AI & Data Science includes:\n• Machine Learning\n• Deep Learning\n• Python\n• Data Analytics\n• AI Projects"
+      ],
+      "follow_up": ["project_ideas", "internship_guidance", "placement_details"]
+    },
+
+    {
+      "tag": "placement_details",
+      "show_in_menu": true,
+      "menu_label": "💼 Placement",
+      "patterns": [
+        "placement", "campus placement",
+        "job opportunity", "companies visiting",
+        "highest package"
+      ],
+      "responses": [
+        "💼 Placement Support:\n• Top IT & Core Companies\n• Aptitude & Technical Training\n• Mock Interviews\n• Resume Building Sessions"
+      ],
+      "follow_up": ["resume_help", "interview_prep", "internship_guidance"]
+    },
+
+    {
+      "tag": "internship_guidance",
+      "show_in_menu": true,
+      "menu_label": "💼 Internship",
+      "patterns": [
+        "internship", "summer internship",
+        "ai internship", "how to get internship",
+        "internship help"
+      ],
+      "responses": [
+        "💼 Internship Tips:\n• Build strong GitHub projects\n• Apply via LinkedIn & Internshala\n• Improve DSA + Python\n• Network with seniors"
+      ],
+      "follow_up": ["resume_help", "project_ideas"]
+    },
+
+    {
+      "tag": "project_ideas",
+      "show_in_menu": true,
+      "menu_label": "💻 Projects",
+      "patterns": [
+        "final year project", "ai project", "project", "project idea",
+        "ml project", "project ideas",
+        "major project"
+      ],
+      "responses": [
+        "🔥 Trending Projects:\n• Student Performance Prediction\n• Resume Screening AI\n• Fake News Detection\n• Face Recognition System\n• AI Chatbot"
+      ],
+      "follow_up": ["internship_guidance", "interview_prep"]
+    },
+
+    {
+      "tag": "exam_schedule",
+      "show_in_menu": true,
+      "menu_label": "📚 Exams",
+      "patterns": [
+        "exam date", "exam schedule", "exam",
+        "semester exam", "internal exam",
+        "exam timetable"
+      ],
+      "responses": [
+        "📝 Please check academic calendar or student portal for latest exam schedule updates."
+      ],
+      "follow_up": ["result_information"]
+    },
+
+    {
+      "tag": "result_information",
+      "show_in_menu": true,
+      "menu_label": "📊 Results",
+      "patterns": [
+        "result", "exam result",
+        "marksheet", "semester result",
+        "grade details"
+      ],
+      "responses": [
+        "📊 Results are published on the student portal. Use your roll number to check."
+      ],
+      "follow_up": ["exam_schedule"]
+    },
+
+    {
+      "tag": "hostel_info",
+      "show_in_menu": true,
+      "menu_label": "🏠 Hostel",
+      "patterns": [
+        "hostel", "accommodation", "hostel info", "hostel information",
+        "hostel facility", "hostel fees",
+        "room allotment"
+      ],
+      "responses": [
+        "🏠 Hostel Facilities:\n• Separate Boys & Girls Hostel\n• WiFi & Mess\n• 24/7 Security\n• Affordable Fee"
+      ],
+      "follow_up": ["mess_canteen"]
+    },
+
+    {
+      "tag": "mess_canteen",
+      "show_in_menu": true,
+      "menu_label": "🍽 Mess",
+      "patterns": [
+        "mess", "canteen",
+        "food facility", "meal plan",
+        "food quality"
+      ],
+      "responses": [
+        "🍽 Mess Facility:\n• Hygienic Food\n• Veg & Non-Veg Options\n• Monthly Plan Available"
+      ],
+      "follow_up": ["hostel_info"]
+    },
+
+    {
+      "tag": "library_info",
+      "show_in_menu": true,
+      "menu_label": "📚 Library",
+      "patterns": [
+        "library", "books available",
+        "digital library", "study material",
+        "library timing"
+      ],
+      "responses": [
+        "📚 Library Facility:\n• Digital & Physical Books\n• Research Journals\n• Study Rooms\n• E-Resources"
+      ],
+      "follow_up": ["exam_schedule"]
+    },
+
+    {
+      "tag": "sports_facility",
+      "show_in_menu": true,
+      "menu_label": "🏆 Sports",
+      "patterns": [
+        "sports", "sports facility", "sprot",
+        "playground", "gym facility",
+        "sports complex"
+      ],
+      "responses": [
+        "🏆 Sports Facilities:\n• Cricket Ground\n• Football Field\n• Indoor Games\n• Gym"
+      ],
+      "follow_up": ["hostel_info"]
+    },
+
+    {
+      "tag": "coding_help",
+      "show_in_menu": true,
+      "menu_label": "💻 Coding Help",
+      "patterns": [
+        "python help", "programming help", "coding",
+        "coding help", "debug code",
+        "ml help"
+      ],
+      "responses": [
+        "💻 Tell me your programming language and problem. I’ll help you step by step 😊"
+      ],
+      "follow_up": ["project_ideas", "interview_prep"]
+    },
+
+    {
+      "tag": "interview_prep",
+      "show_in_menu": true,
+      "menu_label": "🎯 Interview",
+      "patterns": [
+        "interview questions", "viva questions",
+        "technical interview", "hr interview", "interview",
+        "interview preparation"
+      ],
+      "responses": [
+        "🎯 Interview Tips:\n• Practice DSA\n• Prepare core subjects\n• Revise projects\n• Practice HR questions"
+      ],
+      "follow_up": ["resume_help"]
+    },
+
+    {
+      "tag": "resume_help",
+      "show_in_menu": true,
+      "menu_label": "📄 Resume",
+      "patterns": [
+        "resume help", "cv help",
+        "improve resume", "resume format", "resume",
+        "resume template"
+      ],
+      "responses": [
+        "📄 Resume Tips:\n• Mention Projects Clearly\n• Add GitHub Link\n• Highlight Skills\n• Keep it 1 page"
+      ],
+      "follow_up": ["interview_prep"]
+    },
+
+    {
+      "tag": "motivation",
+      "show_in_menu": true,
+      "menu_label": "😊 Motivation",
+      "patterns": [
+        "motivate me", "feeling low", "motivation",
+        "i am stressed", "exam stress",
+        "demotivated"
+      ],
+      "responses": [
+        "Stay consistent 💪 Small daily improvement leads to big success 🚀"
+      ],
+      "follow_up": ["interview_prep", "project_ideas"]
+    },
+
+    {
+      "tag": "jokes",
+      "patterns": [
+        "joke", "funny", "tell me joke",
+        "make me laugh", "tell me something funny"
+      ],
+      "responses": [
+        "Why do programmers prefer dark mode? Because light attracts bugs 😂"
+      ]
+    },
+
+    {
+      "tag": "thanks",
+      "patterns": [
+        "thanks", "thank you",
+        "thx", "thanks a lot"
+      ],
+      "responses": [
+        "You're welcome 😊",
+        "Glad I could help!"
+      ]
+    },
+
+    {
+      "tag": "goodbye",
+      "patterns": [
+        "bye", "exit",
+        "quit", "see you",
+        "goodbye"
+      ],
+      "responses": [
+        "Goodbye 👋 Have a productive day!",
+        "See you soon 😊"
+      ]
+    }
+
+  ]
+}

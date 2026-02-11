@@ -1,0 +1,8 @@
+numpy
+nltk
+scikit-learn
+flask
+pickle-mixin
+langdetect
+sentence-transformers
+gunicorn

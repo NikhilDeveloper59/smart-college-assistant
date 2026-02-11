@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AI Chat</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body class="dark-mode">
+
+<div class="app-container">
+
+    <!-- ================= Chat Window ================= -->
+    <main class="chat-container">
+
+        <!-- Header -->
+        <header class="chat-header">
+            <div class="header-left">
+                <span class="logo">✨</span>
+                <span class="title">AI Chat</span>
+            </div>
+
+            <div class="header-right">
+                <button id="theme-toggle" title="Toggle Dark/Light">🌙</button>
+            </div>
+        </header>
+
+
+        <!-- 🔥 Permanent Top Feature Buttons -->
+        <div class="top-features">
+            <button onclick="sendTopFeature('admission process')">🎓 Admissions</button>
+            <button onclick="sendTopFeature('documents required')">📄 Documents</button>
+            <button onclick="sendTopFeature('fee structure')">💰 Fees & Scholarship</button>
+            <button onclick="sendTopFeature('branches')">🏫 Branches</button>
+            <button onclick="sendTopFeature('placement')">💼 Placement</button>
+            <button onclick="sendTopFeature('exam schedule')">📚 Exams & Results</button>
+            <button onclick="sendTopFeature('hostel info')">🏠 Hostel & Mess</button>
+            <button onclick="sendTopFeature('project ideas')">💻 Projects</button>
+            <button onclick="sendTopFeature('interview preparation')">🎯 Interview & Resume</button>
+            <button onclick="sendTopFeature('motivate me')">😊 Motivation</button>
+        </div>
+
+
+        <!-- Chat Body -->
+        <section class="chat-body" id="chat-body">
+
+            <div class="welcome-box">
+                <h1>What can I help you with?</h1>
+
+                <div class="quick-actions">
+                    <button class="action-card" onclick="sendTopFeature('help')">
+                        <span>✔️</span>
+                        <p>Ask Question</p>
+                    </button>
+
+                    <button class="action-card" onclick="sendTopFeature('features')">
+                        <span>📍</span>
+                        <p>Find Info</p>
+                    </button>
+
+                    <button class="action-card">
+                        <span>⚙️</span>
+                        <p>Settings</p>
+                    </button>
+
+                    <button class="action-card" onclick="sendTopFeature('help')">
+                        <span>⭐</span>
+                        <p>Help</p>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Dynamic suggestion buttons (inside chat only) -->
+            <div id="dynamic-options" class="options hidden"></div>
+
+        </section>
+
+
+        <!-- Input Area -->
+        <footer class="chat-footer">
+            <button class="footer-btn">＋</button>
+            <button class="footer-btn">•••</button>
+
+            <span class="input-label">Message</span>
+
+            <div id="listening-indicator" class="listening hidden">
+                <span></span><span></span><span></span><span></span>
+            </div>
+
+            <input
+                type="text"
+                id="user-input"
+                placeholder="Type your message..."
+                autocomplete="off"
+            >
+
+            <button class="footer-btn" id="mic-btn">🎤</button>
+            <button class="send-btn">➤</button>
+        </footer>
+
+    </main>
+</div>
+
+
+<!-- JavaScript -->
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>
